@@ -1,0 +1,59 @@
+extends layout
+block content
+    .container
+        .row
+            .col-md-6.offset-md-3
+                form.mt-5(action="/", method="POST")
+                    .form-row#design
+                        img(src="/index.jpeg")
+                    div(class="form-row")
+                        div(class="form-group col-md-6")
+                            label(for="surname") Surname
+                            input(type="text" class="form-control" id="surname" name="surname")
+
+                        div(class="form-group col-md-6")
+                            label(for="givenname") Given name
+                            input(type="text" class="form-control" id="givenname" name="givenname")
+
+                    div(class="form-row")
+                        div(class="form-group col-md-6")
+                            label(for="dateofbirth") Date of Birth
+                            input(type="date" class="form-control" id="dateofbirth" name="dateOfBirth")
+
+                        div(class="form-group col-md-6")
+                            label(for="residence") Place of Residence
+                            input(type="text" class="form-control" id="residence" name="residence")
+                    
+                    div(class="form-row")
+                        div(class="form-group col-md-6")
+                            label(for="occupation") Occupation
+                            input(type="text" class="form-control" id="occupation" name="occupation")
+
+                        div(class="form-group col-md-6")
+                            label(for="nationality") Nationality
+                            input(type="text" class="form-control" id="nationality" name="nationality")
+                        
+                    .form-group
+                        h4 Gender
+                        hr
+                    .form-row
+                        div(class="form-group col-md-6")
+                            div(class="form-check")
+                                input(class="form-check-input" type="checkbox" id="male" value="male")
+                                label(class="form-check-label" for="male") Male
+                        div(class="form-group col-md-6")
+                            div(class="form-check")
+                                input(class="form-check-input" type="checkbox" id="female" value="female")
+                                label(class="form-check-label" for="female") Female
+
+                    div(class="form-group")
+                        label(for="category") Category
+                        select#category.form-control(name="category" style="padding: 0 auto;")
+                            option(value="") --Select category--
+                            option(value="returnee") Returnee
+                            option(value="contact") Contact
+                            option(value="alert") Alert
+                            option(value="volunteer") Volunteer
+                
+                    .form-group
+                        button(type="submit" class="btn btn-primary") Register
