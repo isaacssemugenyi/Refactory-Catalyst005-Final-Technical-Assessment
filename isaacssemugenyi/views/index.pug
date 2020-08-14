@@ -2,15 +2,15 @@ extends layout
 block content
     .container
         .row
-            .col-md-6.offset-md-3
-                form.mt-5#designform(action="/", method="POST" onsubmit="return validate()")
+            .col-md-8.offset-md-2
+                form.mt-5#designform(action="/", method="POST")
                     .form-row#design
                         img(src="/index.jpeg")
                     .form-row.mt-4
                         .col-md-6.offset-md-3
                             h6.text-center Ministry of Health
-                            h5
-                                strong COVID-19(CORONA VIRUS)
+                            h5.text-center
+                                strong COVID-19 (CORONA VIRUS)
                             h6.text-center Virus-Test Registration Form
 
                     //- div(class="alert alert-success" role="alert" id="better")
@@ -61,27 +61,27 @@ block content
                     .form-row
                         div(class="form-group col-md-6")
                             div(class="form-check")
-                                input(class="form-check-input" type="checkbox" id="gender1" value="male")
+                                input(class="form-check-input" type="checkbox" id="male" value="Male")
                                 label(class="form-check-label" for="male") Male
                         div(class="form-group col-md-6")
                             div(class="form-check")
-                                input(class="form-check-input" type="checkbox" id="gender2" value="female")
+                                input(class="form-check-input" type="checkbox" id="option2" value="Female")
                                 label(class="form-check-label" for="female") Female
                                 small(class="error" id="genderErr")
 
                     div(class="form-group")
                         label(for="category")
                             strong Category
-                        select#category.form-control(name="category" style="padding: 0 auto;")
-                            option(value="") --Select category--
-                            option(value="returnee") Returnee
-                            option(value="contact") Contact
-                            option(value="alert") Alert
-                            option(value="volunteer") Volunteer
+                        select#category.form-control(name="category" style="padding-left: 35%")
+                            option(value="") --Select Category--
+                            option(value="Returnee") Returnee
+                            option(value="Contact") Contact
+                            option(value="Alert") Alert
+                            option(value="Volunteer") Volunteer
                             small(class="error" id="catErr")
                     
                     .form-row
                         .form-group.col-md-6
                         .form-group.col-md-6
-                            button(class="btn btn-primary btn-block")
+                            button(class="btn btn-primary btn-block" onclick="return validate()")
                                 b Register

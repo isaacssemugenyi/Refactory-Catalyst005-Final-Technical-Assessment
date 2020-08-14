@@ -7,7 +7,10 @@ const patientSchema = mongoose.Schema({
     residence: String,
     occupation: String,
     nationality: String,
-    gender: String,
+    gender: {
+        type: String,
+        default: "Male"
+    },
     category: String
 })
 

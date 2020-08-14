@@ -3,23 +3,22 @@ const router = express.Router();
 
 const Patient = require('../models/patient.model');
 
-/**
- * GET: '/' index page
- * POST: '/' index page
-*/
-
+//GET: '/' Serving the register/ index page
 router.get('/', (req, res)=>{
     res.render('index');
 })
 
-router.post('/', (req, res)=>{
+//POST: '/' Register client data
+router.post('/', async(req, res)=>{
     const patient = new Patient(req.body);
-    
-    patient.save((err)=>{
-        if(err) console.log(err);
-        console.log(req.body);
-        res.redirect('/');
-    })
+    try{
+       await patient.save((err)=>{
+            if(err) console.log(err);
+            res.redirect('/');
+        })
+    } catch(err){
+        console.log(err);
+    }
 })
 
 module.exports = router;
