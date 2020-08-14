@@ -6,41 +6,54 @@ block content
                 form.mt-5#designform(action="/", method="POST" onsubmit="return validate()")
                     .form-row#design
                         img(src="/index.jpeg")
+                    .form-row.mt-4
+                        .col-md-6.offset-md-3
+                            h6.text-center Ministry of Health
+                            h5
+                                strong COVID-19(CORONA VIRUS)
+                            h6.text-center Virus-Test Registration Form
                     div(class="form-row")
                         div(class="form-group col-md-6")
-                            label(for="surname") Surname
+                            label(for="surname")
+                                strong Surname
                             input(type="text" class="form-control" id="surname" name="surname")
                             small(class="error" id="surnameErr")
 
                         div(class="form-group col-md-6")
-                            label(for="givenname") Given name
+                            label(for="givenname")
+                                strong Given name
                             input(type="text" class="form-control" id="givenname" name="givenname")
                             small(class="error" id="givenErr")
 
                     div(class="form-row")
                         div(class="form-group col-md-6")
-                            label(for="dateofbirth") Date of Birth
+                            label(for="dateofbirth")
+                                strong Date of Birth
                             input(type="date" class="form-control" id="dateofbirth" name="dateOfBirth")
                             small(class="error" id="birthErr")
 
                         div(class="form-group col-md-6")
-                            label(for="residence") Place of Residence
+                            label(for="residence")
+                                strong Place of Residence
                             input(type="text" class="form-control" id="residence" name="residence")
                             small(class="error" id="resErr")
 
                     div(class="form-row")
                         div(class="form-group col-md-6")
-                            label(for="occupation") Occupation
+                            label(for="occupation")
+                                strong Occupation
                             input(type="text" class="form-control" id="occupation" name="occupation")
                             small(class="error" id="occupErr")
 
                         div(class="form-group col-md-6")
-                            label(for="nationality") Nationality
+                            label(for="nationality")
+                                strong Nationality
                             input(type="text" class="form-control" id="nationality" name="nationality")
                             small(class="error" id="natErr")
 
                     .form-group
-                        h4 Gender
+                        h5
+                            strong Gender
                         hr
                     .form-row
                         div(class="form-group col-md-6")
@@ -54,7 +67,8 @@ block content
                                 small(class="error" id="genderErr")
 
                     div(class="form-group")
-                        label(for="category") Category
+                        label(for="category")
+                            strong Category
                         select#category.form-control(name="category" style="padding: 0 auto;")
                             option(value="") --Select category--
                             option(value="returnee") Returnee
@@ -64,6 +78,7 @@ block content
                             small(class="error" id="catErr")
                     
                     .form-row
-                        .form-group.col-md-10
-                        .form-group.col-md-2
-                            button(class="btn btn-primary") Register
+                        .form-group.col-md-6
+                        .form-group.col-md-6
+                            button(class="btn btn-primary btn-block")
+                                b Register
