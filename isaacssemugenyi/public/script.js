@@ -2,6 +2,10 @@ function printError(elemId, msg){
     document.getElementById(elemId).innerHTML = msg;
 }
 
+function success(elemId, msg){
+    document.getElementById(elemId).innerHTML = msg;
+}
+
 // const form = document.getElementById('designform')
 
 // form.addEventListener('submit', (e)=>{
@@ -81,6 +85,7 @@ function printError(elemId, msg){
             // e.preventDefault();
         } else {
             if((surnameErr && givenErr && birthErr && resErr && occupErr && natErr && catErr) === false){
+                success('better', 'Registration was successful');
                 return true;
                 // e.currentTarget.submit();
             }
