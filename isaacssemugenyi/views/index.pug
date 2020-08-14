@@ -3,48 +3,55 @@ block content
     .container
         .row
             .col-md-6.offset-md-3
-                form.mt-5(action="/", method="POST")
+                form.mt-5#designform(action="/", method="POST" onsubmit="return validate()")
                     .form-row#design
                         img(src="/index.jpeg")
                     div(class="form-row")
                         div(class="form-group col-md-6")
                             label(for="surname") Surname
                             input(type="text" class="form-control" id="surname" name="surname")
+                            small(class="error" id="surnameErr")
 
                         div(class="form-group col-md-6")
                             label(for="givenname") Given name
                             input(type="text" class="form-control" id="givenname" name="givenname")
+                            small(class="error" id="givenErr")
 
                     div(class="form-row")
                         div(class="form-group col-md-6")
                             label(for="dateofbirth") Date of Birth
                             input(type="date" class="form-control" id="dateofbirth" name="dateOfBirth")
+                            small(class="error" id="birthErr")
 
                         div(class="form-group col-md-6")
                             label(for="residence") Place of Residence
                             input(type="text" class="form-control" id="residence" name="residence")
-                    
+                            small(class="error" id="resErr")
+
                     div(class="form-row")
                         div(class="form-group col-md-6")
                             label(for="occupation") Occupation
                             input(type="text" class="form-control" id="occupation" name="occupation")
+                            small(class="error" id="occupErr")
 
                         div(class="form-group col-md-6")
                             label(for="nationality") Nationality
                             input(type="text" class="form-control" id="nationality" name="nationality")
-                        
+                            small(class="error" id="natErr")
+
                     .form-group
                         h4 Gender
                         hr
                     .form-row
                         div(class="form-group col-md-6")
                             div(class="form-check")
-                                input(class="form-check-input" type="checkbox" id="male" value="male")
+                                input(class="form-check-input" type="checkbox" id="gender1" value="male")
                                 label(class="form-check-label" for="male") Male
                         div(class="form-group col-md-6")
                             div(class="form-check")
-                                input(class="form-check-input" type="checkbox" id="female" value="female")
+                                input(class="form-check-input" type="checkbox" id="gender2" value="female")
                                 label(class="form-check-label" for="female") Female
+                                small(class="error" id="genderErr")
 
                     div(class="form-group")
                         label(for="category") Category
@@ -54,6 +61,9 @@ block content
                             option(value="contact") Contact
                             option(value="alert") Alert
                             option(value="volunteer") Volunteer
-                
-                    .form-group
-                        button(type="submit" class="btn btn-primary") Register
+                            small(class="error" id="catErr")
+                    
+                    .form-row
+                        .form-group.col-md-10
+                        .form-group.col-md-2
+                            button(class="btn btn-primary") Register
